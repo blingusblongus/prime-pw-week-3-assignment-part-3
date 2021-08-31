@@ -32,7 +32,24 @@ supplyChanges.push(25);
 //    - if the value is 0, log 'No Change.'
 //    - if the value is negative, format the log as 'Removed x parts.'
 console.log('6. Showing supplyChanges...');
-console.log(supplyChanges);
+
+for(let i=0; i<supplyChanges.length; i++){
+  let val = supplyChanges[i];
+  if(val > 0){
+    console.log(`Added ${val} parts.`);
+  }else if(val === 0){
+    console.log('No Change');
+  }else if(val < 0){
+    val *= -1; // not technically asked for in the question, but reads better
+    console.log(`Removed ${val} parts.`);
+  }
+}
+
+// STRETCH GOALS
+console.log('---  Stretch Goals  ---');
+// 7. Rewrite the `for` loop from #6 as a `for of` loop.
+console.log('7. Showing supplyChanges with "for of" loop');
+
 for(let el of supplyChanges){
   if(el > 0){
     console.log(`Added ${el} parts.`);
@@ -43,11 +60,6 @@ for(let el of supplyChanges){
     console.log(`Removed ${el} parts.`);
   }
 }
-
-// STRETCH GOALS
-console.log('---  Stretch Goals  ---');
-// 7. Rewrite the `for` loop from #6 as a `for of` loop.
-console.log('7. Showing supplyChanges with "for of" loop');
 
 // 8. Rewrite the `for` loop from #6 as a `while` loop.
 console.log('8. Showing supplyChanges with "while" loop');
